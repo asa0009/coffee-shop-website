@@ -9,7 +9,7 @@ body{
 }
 /* backgrounf picture */
 .first_page .backgimg{
-    background-image: url(/imags/espresso-surrounded-by-scattered-coffee-beans-dark-surface\ 1.png);
+    background-image: url("../imags/espresso-surrounded-by-scattered-coffee-beans-dark-surface 1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
