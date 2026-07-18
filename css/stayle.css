@@ -1,0 +1,548 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-color: #eae7e1;
+}
+/* backgrounf picture */
+.first_page .backgimg{
+    background-image: url(/imags/espresso-surrounded-by-scattered-coffee-beans-dark-surface\ 1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height:90vh;
+}
+@media (max-width:768px) {
+    .first_page .backgimg{
+        min-height: auto;
+        aspect-ratio: 1920 / 1000;
+        background-size: contain;
+        background-position: center top;
+    }
+}
+/* backgrounf picture */
+/* start header  */
+.backgimg .container{
+    color: aliceblue;
+}
+.backgimg .container .header{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+.container .header h1{
+    grid-area: logo;
+}
+#sidebar-active{
+    display: none;
+}
+.container .header i{
+    display: none;
+}
+.container .header .serch{
+    display: block;
+    grid-area: sechh;
+}
+.container .header .toggle-btn{
+    grid-area: togglee;
+}
+.links-container{
+    width: 50%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+}
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right:20px ;
+}
+nav a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 20px;
+    
+}
+nav a:hover{
+    color:#544A3E;
+}
+@media (max-width:880px) {
+    .backgimg .container .header{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas: "logo sechh togglee";
+        justify-content: center;
+        align-items: center;
+        justify-items: center; 
+
+    }
+    .links-container{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 300px;
+        background-color: #30261C;
+
+    }
+    nav {
+        flex-direction: column;
+        width: 100%;
+        height: 50%;
+        align-items: flex-start;
+    }
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+    }
+    nav a:active{
+    color: yellow;
+    }
+    .container .header i{
+        padding: 20px 30px;
+        display: block;
+}
+#sidebar-active:checked ~.links-container{
+        display: flex;
+}
+    
+}
+
+/* start small contanent  */
+/* Base styles (larger screens) */
+.sta .container{
+    background-color: #E2D9C8;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+}
+.sta .container .picon{
+    display: grid;
+    justify-content: center;
+    font-size: 30px;
+    padding: 20px;
+    color: #544A3E;
+    font-weight: 500;
+    gap: 10px;
+    text-align: center;
+}
+.sta .container .picon i{
+justify-self: center;
+}
+.sta .container .picon h5{
+    font-weight: 500;
+}
+/* Mobile styles (smaller screens) */
+@media (max-width:468px){
+.sta .container{
+    background-color: #E2D9C8;
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+}
+.sta .container .picon{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    gap: 10px;
+    font-size: 25px;
+}
+}
+/* end small contanent  */
+/* roll start  */
+.Title {
+    width: 100%;
+    background-color: #eae7e1;
+    padding: 20px;
+}
+.Title h3{
+    text-align: center;
+    font-size: 34px;
+    font-weight: 100;
+    color: #30261C;
+}
+.roll{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(60px, 1fr));
+    background-color: #eae7e1;
+    padding: 20px;
+    justify-content: space-around;
+    gap: 10px;
+    padding-bottom: 56px;
+}
+.roll img{
+    width: 100%;
+}
+.roll .galary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: #c3bcb5 3px solid;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+    background-color: #dcd7cd;
+}
+.galary h4 {
+    font-size: 30px;
+    margin: 10px 0 5px;
+}
+
+.galary p {
+    text-align: center;
+    font-size: 18px;
+    align-self: center;
+}
+.roll .galary .pebut{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.roll .galary .pebut button{
+    background-color: #2A0000;
+    color: aliceblue;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+}
+.roll .galary:hover{
+    transform: translateY(-10px)
+}
+@media (max-width: 600px) {
+    .roll {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        /* إخفاء شريط التمرير */
+        scrollbar-width: none;           /* Firefox */
+        -ms-overflow-style: none;        /* Old Edge */
+    }
+    .roll img{
+    width: 80%;
+}
+.roll .galary p{
+    font-size: 20px;
+}
+    .roll::-webkit-scrollbar {
+        display: none;                   /* Chrome, Safari */
+    }
+
+    .galary {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
+    
+    
+}
+/* end roll  */
+/* start smallcon2 */
+.smallcon2{
+    width: 100%;
+    background-color: #E2D9C8;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+.smallcon2 .dmg{
+    width: 100%;
+    object-fit: cover;
+}
+.smallcon2 .dmg img{
+    width: 100%;
+    object-fit: cover;
+}
+.smallcon2 .con{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.smallcon2 .con h3{
+    font-size: 28px;
+    padding: 5px;
+    text-align: center;
+}
+.smallcon2 .con button{
+    background-color: #30261C;
+    color: aliceblue;
+    white-space: nowrap;
+    padding: 10px 20px;
+    width: auto;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* smallcon2 small screens */
+@media (max-width: 600px){
+    .smallcon2{
+        flex-direction: column; /* أهم تغيير: نرتب العناصر فوق بعض بدل جنب بعض */
+        height: auto; 
+    }
+    .smallcon2 .dmg img{
+        width: 100%; 
+        object-fit: contain;
+    }
+    .smallcon2 .con{
+        width: 100%; 
+        padding: 15px 10px;
+    }
+    .smallcon2 .con h3{
+        font-size: 20px;
+    }
+    .smallcon2 .con button{
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+} 
+
+
+/* end smallcon2 */
+/* strat Review */
+.title2{
+    width: 100%;
+    display: flex;
+    height: 20vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #30261C;
+}
+.title2 h2{
+    font-size: 50px;
+}
+.title2 h3{
+    font-size: 40px;
+}
+.Review{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    gap: 10px;
+}
+.Review .custamer{
+    max-width: 40%;
+    background-color: #c3bcb5;
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.5s ease;
+}
+.Review .custamer:hover{
+    transform: translatey(-10px);
+}
+.Review .custamer .box{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.Review .custamer .box .picnam{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    align-items: center;
+}
+.Review .sr{
+    padding: 5px;
+
+}
+.Review .hdiv h3{
+    font-size: 20px;
+}
+.Review .hdiv h4{
+    color: #30261C;
+    opacity: 0.7;
+}
+.Review .stras{
+    display: flex;
+    width: 40%;
+    align-items: flex-start;
+    justify-content: center;
+}
+.Review .stras img{
+    width: 100%;
+}
+.Review .pdiv2{
+    padding: 5px;
+}
+@media (max-width: 850px) {
+    .Review {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding: 50px 20px;         /* مسافة يمين ويسار عشان الكارد ما يلزق بحواف الشاشة */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .Review::-webkit-scrollbar {
+        display: none;               /* إخفاء شريط التمرير في كروم/سفاري */
+    }
+    .Review .custamer {
+        flex: 0 0 90%;                
+        max-width: 90%;               
+        scroll-snap-align: center;
+    }
+    .Review .custamer .box .picnam {
+        width: auto;                  
+    }
+    .Review .stras {
+        width: auto;
+    }
+    .title2 h2{
+    font-size: 40px;
+}
+.title2 h3{
+    font-size: 30px;
+}
+}
+/* end Review */
+/* strat search  */
+.search{
+    width: 100%;
+    background-color: #E2D9C8;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.search .pic{
+    width: 30%;
+}
+.search .pic img{
+    width: 100%;
+    height: 100%;
+}
+.search .serac{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.search .serac .dh {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.search .dh h2{
+    padding: 5px;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+.search .dh h3{
+    padding: 5px;
+    font-weight: 200;
+    font-size: 18px;
+    text-align: center;
+}
+.search .src{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.search .src button{
+    background-color: #30261C;
+    padding: 10px;
+    width: 100px;
+    border-radius: 80px;
+    color: aliceblue;
+    margin: 5px;
+}
+.search .src input{
+    padding: 10px;
+    border-radius: 80px;
+    margin: 5px;
+}
+@media (max-width: 580px){
+    .search{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .search .pic{
+        width: 100%;
+        height: 100%;
+    }
+    .search .pic:first-child img {
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+
+.search .pic:last-child img {
+    -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
+    mask-image: linear-gradient(to top, black 40%, transparent 100%);
+}
+    .search .dh h2{
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 900;
+}
+.search .dh h3{
+    padding: 5px;
+    font-weight: 200;
+    font-size: 16px
+}
+.search .src button{
+    padding: 5px;
+}
+} 
+/* end search */
+/* start footer  */
+footer{
+    display: flex;
+    background-color: #30261C;
+    justify-content: space-evenly;
+    color: #eae7e1;
+    width: 100%;
+    height: 40%;
+    flex-wrap: wrap;
+}
+footer .container h3{
+    padding: 10px;
+    text-align: center;
+}
+footer .container ul{
+    list-style: none;
+}
+footer .container li{
+    padding: 10px;
+}
+footer .container a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px;
+}
+.social-links ul{
+    display: flex;
+}
+/* end footer  */
+/* الحمداالله الذي بنعمته تتم الصالحات */
+
+
+
